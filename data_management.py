@@ -15,7 +15,7 @@ def get_data():
     )
 
     df["sma3"] = df["close"].rolling(3).mean()
-    return df[["time", "open", "high", "low", "close", "sma3"]]
+    return df
 
 if __name__ == "__main__":
     print(get_data())

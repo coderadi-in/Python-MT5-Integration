@@ -1,5 +1,5 @@
 # IMPORTS
-from data_management import get_data, pd
+from data_management import pd
 
 # STRATEGY CLASS
 class SMA3Strategy:
@@ -22,13 +22,14 @@ class SMA3Strategy:
 
         output_dict = {
             "signal": None,
-            "price": current["close"],
-            "timestamp": current["time"]
+            "price": float(current["close"]),
+            "timestamp": current["time"],
+            "strategy": "SMA3"
         }
 
         if (buy_signal): output_dict['signal'] = 'BUY'
         elif (sell_signal): output_dict['signal'] = 'SELL'
-        else: output_dict['signal'] = 'NO SIGNAL'
+        else: output_dict['signal'] = 'NO_SIGNAL'
 
         return output_dict
 
@@ -54,12 +55,13 @@ class SMA3Strategy:
 
         output_dict = {
             "signal": None,
-            "price": current["close"],
-            "timestamp": current["time"]
+            "price": float(current["close"]),
+            "timestamp": current["time"],
+            "strategy": "SMA3"
         }
 
         if (buy_signal): output_dict['signal'] = 'BUY'
         elif (sell_signal): output_dict['signal'] = 'SELL'
-        else: output_dict['signal'] = 'NO SIGNAL'
+        else: output_dict['signal'] = 'NO_SIGNAL'
 
         return output_dict
