@@ -2,9 +2,6 @@
 import pandas as pd
 from basic import *
 
-# CONNECT
-connect()
-
 def get_data():
     data = fetch_market_data()
     df = pd.DataFrame(data)
@@ -18,4 +15,5 @@ def get_data():
     return df
 
 if __name__ == "__main__":
+    connect()
     print(get_data())
