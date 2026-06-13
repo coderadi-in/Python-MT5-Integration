@@ -4,7 +4,7 @@ from data_management import pd
 # STRATEGY CLASS
 class SMA3Strategy:
     @staticmethod
-    def analyze(df: pd.DataFrame) -> dict:
+    def analyze(df: pd.DataFrame, symbol: str) -> dict:
         previous = df.iloc[-2]
         current = df.iloc[-1]
 
@@ -22,6 +22,7 @@ class SMA3Strategy:
 
         output_dict = {
             "signal": None,
+            "symbol": symbol,
             "price": float(current["close"]),
             "timestamp": current["time"],
             "strategy": "SMA3"
@@ -34,7 +35,7 @@ class SMA3Strategy:
         return output_dict
 
     @staticmethod
-    def analyze_with_threshold(df: pd.DataFrame, threshold: float = 0.00005) -> dict:
+    def analyze_with_threshold(df: pd.DataFrame, symbol: str, threshold: float = 0.00005) -> dict:
         previous = df.iloc[-2]
         current = df.iloc[-1]
 
@@ -55,6 +56,7 @@ class SMA3Strategy:
 
         output_dict = {
             "signal": None,
+            "symbol": symbol,
             "price": float(current["close"]),
             "timestamp": current["time"],
             "strategy": "SMA3"

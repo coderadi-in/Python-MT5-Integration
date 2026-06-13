@@ -2,8 +2,8 @@
 import pandas as pd
 from basic import *
 
-def get_data():
-    data = fetch_market_data()
+def get_data(symbol: str = "EURUSD"):
+    data = fetch_market_data(symbol)
     df = pd.DataFrame(data)
 
     df["time"] = (
@@ -12,7 +12,7 @@ def get_data():
     )
 
     df["sma3"] = df["close"].rolling(3).mean()
-    return df
+    return df, symbol
 
 if __name__ == "__main__":
     connect()

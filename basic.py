@@ -15,7 +15,7 @@ def print_account_bal():
     print(account.balance)
 
 # FETCH MARKET DATA
-def fetch_market_data(symbol ="EURUSD", timeframe = mt5.TIMEFRAME_M15, amount = 10):
+def fetch_market_data(symbol = "EURUSD", timeframe = mt5.TIMEFRAME_M15, amount = 10):
     rates = mt5.copy_rates_from_pos(
         symbol,
         timeframe,

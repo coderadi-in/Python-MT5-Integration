@@ -9,11 +9,11 @@ class StrategyManager:
     def add_strategy(self, strategy):
         self.strategies.append(strategy)
 
-    def analyze_all(self, df: DataFrame):
+    def analyze_all(self, df: DataFrame, symbol: str):
         signals = []
 
         for strategy in self.strategies:
-            signal = strategy.analyze(df)
+            signal = strategy.analyze(df, symbol)
 
             signals.append(signal)
 
